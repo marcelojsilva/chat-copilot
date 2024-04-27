@@ -1,8 +1,8 @@
-﻿# Chat Copilot Integration Tests
+﻿# Chat AI Integration Tests
 
 ## Requirements
 
-1. A running instance of the Chat Copilot's [backend](../webapi/README.md).
+1. A running instance of the Chat AI's [backend](../webapi/README.md).
 
 ## Setup
 
@@ -29,7 +29,7 @@ dotnet user-secrets set "BaseUrl" "https://your-backend-address/"
 1. Create a `testsettings.development.json` file next to `testsettings.json`. This file will be ignored by git,
    the content will not end up in pull requests, so it's safe for personal settings. Keep the file safe.
 2. Edit `testsettings.development.json` and
-    1. Set your base address - **make sure it ends with a trailing '/' **
+   1. Set your base address - **make sure it ends with a trailing '/' **
 
 For example:
 
@@ -40,6 +40,7 @@ For example:
 ```
 
 ### Option 3: Use Environment Variables
+
 You may also set the test settings in your environment variables. The environment variables will override the settings in the `testsettings.development.json` file.
 
 - bash:

@@ -27,7 +27,7 @@ namespace CopilotChat.WebApi.Extensions;
 
 /// <summary>
 /// Extension methods for <see cref="IServiceCollection"/>.
-/// Add options and services for Chat Copilot.
+/// Add options and services for Chat AI.
 /// </summary>
 public static class CopilotChatServiceExtensions
 {

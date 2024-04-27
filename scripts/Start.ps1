@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Initializes and runs both the backend and frontend for Chat Copilot.
+Initializes and runs both the backend and frontend for Chat AI.
 #>
 
 # Verify "Core" version of powershell installed (not "Desktop"): https://aka.ms/powershell

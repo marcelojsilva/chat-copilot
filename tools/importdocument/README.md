@@ -1,4 +1,4 @@
-﻿# Copilot Chat Import Document App
+﻿# Chat AI Import Document App
 
 > **!IMPORTANT**
 > This sample is for educational purposes only and is not recommended for production deployments.

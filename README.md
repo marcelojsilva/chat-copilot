@@ -216,9 +216,9 @@ By default, Chat AI runs locally without authentication, using a guest user prof
 
       3. Set _Who can consent_ to _Admins and users_
 
-      4. Set _Admin consent display name_ and _User consent display name_ to `Access copilot chat as a user`
+      4. Set _Admin consent display name_ and _User consent display name_ to `Access Chat AI as a user`
 
-      5. Set _Admin consent description_ and _User consent description_ to `Allows the accesses to the Copilot chat web API as a user`
+      5. Set _Admin consent description_ and _User consent description_ to `Allows the accesses to the Chat AI web API as a user`
 
    4. Add the web app frontend as an authorized client application
 

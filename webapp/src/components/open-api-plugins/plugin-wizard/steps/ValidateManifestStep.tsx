@@ -114,7 +114,9 @@ export const ValidateManifestStep: React.FC<IValidateManifestStepProps> = ({
                         <DismissCircle20Regular color="red" />
                     );
                 const text =
-                    status === ValidationState.Success ? `Validated ${fileType}` : `Could not validate ${fileType}.`;
+                    status === ValidationState.Success
+                        ? `Validado ${fileType}`
+                        : `Não foi possível validar ${fileType}.`;
 
                 return (
                     <AccordionItem value={fileType}>
@@ -134,9 +136,9 @@ export const ValidateManifestStep: React.FC<IValidateManifestStepProps> = ({
                                     <div>
                                         <Body1>Plugin: {pluginManifest?.name_for_human}</Body1>
                                         <br />
-                                        <Body1>Contact: {pluginManifest?.contact_email}</Body1>
+                                        <Body1>Contato: {pluginManifest?.contact_email}</Body1>
                                         <br />
-                                        <Body1>Auth: {pluginManifest?.auth.type}</Body1>
+                                        <Body1>Autenticação: {pluginManifest?.auth.type}</Body1>
                                     </div>
                                 ) : (
                                     <div>

@@ -58,8 +58,12 @@ export const PlansTab: React.FC<IPlansTabProps> = ({ setChatTab }) => {
 
     const { columns, rows } = useTable(planMessages, setChatTab);
     return (
-        <TabView title="Plans" learnMoreDescription="custom plans" learnMoreLink="https://aka.ms/sk-docs-planner">
-            <Table aria-label="Processes plan table" className={classes.table}>
+        <TabView
+            title="Planos"
+            learnMoreDescription="planos personalizados (custom plans)"
+            learnMoreLink="https://aka.ms/sk-docs-planner"
+        >
+            <Table aria-label="Tabela de plano de processos" className={classes.table}>
                 <TableHeader>
                     <TableRow>{columns.map((column) => column.renderHeaderCell())}</TableRow>
                 </TableHeader>
@@ -86,7 +90,7 @@ function useTable(planMessages: IChatMessage[], setChatTab: () => void) {
             columnId: 'goal',
             renderHeaderCell: () => (
                 <TableHeaderCell key="goal" {...headerSortProps('goal')}>
-                    Goal
+                    Objetivo
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -105,7 +109,7 @@ function useTable(planMessages: IChatMessage[], setChatTab: () => void) {
             columnId: 'createdOn',
             renderHeaderCell: () => (
                 <TableHeaderCell key="createdOn" {...headerSortProps('createdOn')}>
-                    Created on
+                    Criado em
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -122,7 +126,7 @@ function useTable(planMessages: IChatMessage[], setChatTab: () => void) {
             columnId: 'tokenCounts',
             renderHeaderCell: () => (
                 <TableHeaderCell key="tokenCounts" {...headerSortProps('tokenCounts')}>
-                    Token Count
+                    Contagem de Tokens
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -130,7 +134,7 @@ function useTable(planMessages: IChatMessage[], setChatTab: () => void) {
                     {
                         // TODO: [Issue #150, sk#2106] Remove static text once core team finishes work to return token usage.
                         // item.tokens
-                        'Coming soon'
+                        'Em breve'
                     }
                 </TableCell>
             ),

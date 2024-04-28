@@ -16,7 +16,7 @@ export const BackendServiceUrl =
     process.env.REACT_APP_BACKEND_URI == null || process.env.REACT_APP_BACKEND_URI.trim() === ''
         ? window.origin
         : process.env.REACT_APP_BACKEND_URI;
-export const NetworkErrorMessage = '\n\nPlease check that your backend is running and that it is accessible by the app';
+export const NetworkErrorMessage = '\n\nVerifique se seu back-end está em execução e acessível pelo aplicativo';
 
 export class BaseService {
     constructor(protected readonly serviceUrl: string = BackendServiceUrl) {}
@@ -64,7 +64,7 @@ export class BaseService {
 
             if (!response.ok) {
                 if (response.status === 504) {
-                    throw Object.assign(new Error('The request timed out. Please try sending your message again.'));
+                    throw Object.assign(new Error('O pedido excedeu o tempo limite. Por favor, tente enviar sua mensagem novamente.'));
                 }
 
                 const responseText = await response.text();

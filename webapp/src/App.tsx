@@ -94,7 +94,7 @@ const App = () => {
                     dispatch(
                         addAlert({
                             message:
-                                'By using Chat AI, you agree to protect sensitive data, not store it in chat, and allow chat history collection for service improvements. This tool is for internal use only.',
+                                'Ao usar o Chat AI, você concorda em proteger dados sensíveis, não armazená-los no chat e permitir a coleta de histórico de chat para melhorias no serviço. Esta ferramenta é destinada apenas para uso interno.',
                             type: AlertType.Info,
                         }),
                     );
@@ -144,7 +144,7 @@ const App = () => {
                             <div className={classes.header}>
                                 <Subtitle1 as="h1">Chat AI</Subtitle1>
                             </div>
-                            {appState === AppState.SigningOut && <Loading text="Signing you out..." />}
+                            {appState === AppState.SigningOut && <Loading text="Desconectando..." />}
                             {appState !== AppState.SigningOut && <Login />}
                         </div>
                     </UnauthenticatedTemplate>
@@ -194,15 +194,15 @@ const Chat = ({
             </div>
             {appState === AppState.ProbeForBackend && <BackendProbe onBackendFound={onBackendFound} />}
             {appState === AppState.SettingUserInfo && (
-                <Loading text={'Hang tight while we fetch your information...'} />
+                <Loading text={'Aguarde enquanto buscamos suas informações...'} />
             )}
             {appState === AppState.ErrorLoadingUserInfo && (
-                <Error text={'Unable to load user info. Please try signing out and signing back in.'} />
+                <Error text={'Não foi possível carregar as informações do usuário. Tente sair e entrar novamente.'} />
             )}
             {appState === AppState.ErrorLoadingChats && (
-                <Error text={'Unable to load chats. Please try refreshing the page.'} />
+                <Error text={'Não foi possível carregar os chats. Por favor tente atualizar a página.'} />
             )}
-            {appState === AppState.LoadingChats && <Loading text="Loading chats..." />}
+            {appState === AppState.LoadingChats && <Loading text="Carregando chats..." />}
             {appState === AppState.Chat && <ChatView />}
         </div>
     );

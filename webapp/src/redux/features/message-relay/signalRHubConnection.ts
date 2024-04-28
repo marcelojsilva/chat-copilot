@@ -64,7 +64,7 @@ const registerCommonSignalConnectionEvents = (hubConnection: signalR.HubConnecti
     // Re-establish the connection if connection dropped
     hubConnection.onclose((error) => {
         if (hubConnection.state === signalR.HubConnectionState.Disconnected) {
-            const errorMessage = 'Connection closed due to error. Try refreshing this page to restart the connection';
+            const errorMessage = 'Conexão fechada devido a erro. Tente atualizar esta página para reiniciar a conexão';
             store.dispatch(
                 addAlert({
                     message: String(errorMessage),
@@ -78,7 +78,7 @@ const registerCommonSignalConnectionEvents = (hubConnection: signalR.HubConnecti
 
     hubConnection.onreconnecting((error) => {
         if (hubConnection.state === signalR.HubConnectionState.Reconnecting) {
-            const errorMessage = 'Connection lost due to error. Reconnecting...';
+            const errorMessage = 'Conexão perdida devido a erro. Reconectando...';
             store.dispatch(
                 addAlert({
                     message: String(errorMessage),
@@ -92,7 +92,7 @@ const registerCommonSignalConnectionEvents = (hubConnection: signalR.HubConnecti
 
     hubConnection.onreconnected((connectionId = '') => {
         if (hubConnection.state === signalR.HubConnectionState.Connected) {
-            const message = 'Connection reestablished. Please refresh the page to ensure you have the latest data.';
+            const message = 'Conexão restabelecida. Atualize a página para garantir que você tenha os dados mais recentes.';
             store.dispatch(addAlert({ message, type: AlertType.Success, id: Constants.app.CONNECTION_ALERT_ID }));
             console.log(message + ` Connected with connectionId ${connectionId}`);
         }
@@ -105,11 +105,11 @@ const startSignalRConnection = (hubConnection: signalR.HubConnection, store: Sto
         .start()
         .then(() => {
             console.assert(hubConnection.state === signalR.HubConnectionState.Connected);
-            console.log('SignalR connection established');
+            console.log('Conexão SignalR estabelecida');
         })
         .catch((err) => {
             console.assert(hubConnection.state === signalR.HubConnectionState.Disconnected);
-            console.error('SignalR Connection Error: ', err);
+            console.error('Erro de conexão do SignalR: ', err);
             setTimeout(() => {
                 startSignalRConnection(hubConnection, store);
             }, 5000);
@@ -183,7 +183,7 @@ const registerSignalREvents = (hubConnection: signalR.HubConnection, store: Stor
         if (!(id in store.getState().conversations.conversations)) {
             store.dispatch(
                 addAlert({
-                    message: `Chat ${id} not found in store. Chat edited signal from server is not processed.`,
+                    message: `Chat ${id} não encontrado na loja. O sinal editado do chat do servidor não é processado.`,
                     type: AlertType.Error,
                 }),
             );
@@ -196,7 +196,7 @@ const registerSignalREvents = (hubConnection: signalR.HubConnection, store: Stor
         const conversations = store.getState().conversations.conversations;
         if (!(chatId in conversations)) {
             store.dispatch({
-                message: `Chat ${chatId} not found in store. ChatDeleted signal from server was not processed. ${COPY.REFRESH_APP_ADVISORY}`,
+                message: `Chat ${chatId} não encontrado na loja. O sinal ChatDeleted do servidor não foi processado. ${COPY.REFRESH_APP_ADVISORY}`,
                 type: AlertType.Error,
             });
         } else {
@@ -207,7 +207,7 @@ const registerSignalREvents = (hubConnection: signalR.HubConnection, store: Stor
                 addAlert({
                     message: deletedByAnotherUser
                         ? COPY.CHAT_DELETED_MESSAGE(friendlyChatName)
-                        : `Chat {${friendlyChatName}} deleted successfully.`,
+                        : `Chat {${friendlyChatName}} excluído com sucesso.`,
                     type: AlertType.Warning,
                 }),
             );

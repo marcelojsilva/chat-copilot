@@ -37,11 +37,11 @@ export const ChatStatus: React.FC = () => {
     let message = conversations[selectedId].botResponseStatus;
     const numberOfUsersTyping = typingUserList.length;
     if (numberOfUsersTyping === 1) {
-        message = message ? `${message} and a user is typing` : 'A user is typing';
+        message = message ? `${message} e um usuário está digitando` : 'Um usuário está digitando';
     } else if (numberOfUsersTyping > 1) {
         message = message
-            ? `${message} and ${numberOfUsersTyping} users are typing`
-            : `${numberOfUsersTyping} users are typing`;
+            ? `${message} e ${numberOfUsersTyping} os usuários estão digitando`
+            : `${numberOfUsersTyping} os usuários estão digitando`;
     }
 
     if (!message) {

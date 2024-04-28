@@ -50,15 +50,15 @@ export const EnterManifestStep: React.FC<IEnterManifestStepProps> = ({
 
     return (
         <>
-            <Subtitle1>Enter your website domain</Subtitle1>
+            <Subtitle1>Insira o domínio do seu site</Subtitle1>
             <Text size={400}>
-                To connect a plugin, provide the website domain where your{' '}
+                Para conectar um plugin, forneça o domínio do site onde seu{' '}
                 <a
                     href={'https://platform.openai.com/docs/plugins/getting-started/plugin-manifest'}
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    OpenAI plugin manifest
+                    Manifesto do plug-in OpenAI
                 </a>{' '}
                 is hosted. This is the{' '}
                 <Text size={400} weight="bold">
@@ -82,23 +82,23 @@ export const EnterManifestStep: React.FC<IEnterManifestStepProps> = ({
                 </div>
             )}
             <Body1 italic>
-                Note: Chat AI currently only supports plugins requiring{' '}
+                Observação: o Chat AI atualmente oferece suporte apenas a plug-ins que exigem{' '}
                 <a
                     href={'https://platform.openai.com/docs/plugins/authentication/no-authentication'}
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    no auth
+                    sem autenticação
                 </a>{' '}
-                or{' '}
+                ou{' '}
                 <a
                     href={'https://platform.openai.com/docs/plugins/authentication/user-level'}
                     target="_blank"
                     rel="noreferrer noopener"
                 >
-                    user-level
+                    autenticação de nível de usuário
                 </a>{' '}
-                authentication.
+                .
             </Body1>
         </>
     );

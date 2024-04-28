@@ -66,11 +66,11 @@ const acquireToken = async (
                         })
                         .catch(function (error) {
                             // Acquire token interactive failure
-                            throw new Error(`Received error while retrieving access token: ${error as string}`);
+                            throw new Error(`Erro recebido ao recuperar o token de acesso: ${error as string}`);
                         });
                 }
             }
-            throw new Error(`Received error while retrieving access token: ${error as string}`);
+            throw new Error(`Erro recebido ao recuperar o token de acesso: ${error as string}`);
         });
 };
 

@@ -31,9 +31,9 @@ export const TabView: React.FC<ITabViewProps> = ({ title, learnMoreDescription, 
             <h2>{title}</h2>
             {children}
             <Label size="small" color="brand" className={classes.footer}>
-                Want to learn more about {learnMoreDescription}? Click{' '}
+                Quer saber mais sobre {learnMoreDescription}? Clique{' '}
                 <Link href={learnMoreLink} target="_blank" rel="noreferrer">
-                    here
+                    aqui
                 </Link>
                 .
             </Label>

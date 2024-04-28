@@ -70,37 +70,37 @@ export const BackendProbe: FC<IData> = ({ onBackendFound }) => {
         <>
             {isMaintenance ? (
                 <div className={classes.informativeView}>
-                    <Title3>{model?.title ?? 'Site undergoing maintenance...'}</Title3>
+                    <Title3>{model?.title ?? 'Site em manutenção...'}</Title3>
                     <Spinner />
                     <Body1>
-                        {model?.message ?? 'Planned site maintenance is underway.  We apologize for the disruption.'}
+                        {model?.message ?? 'A manutenção planejada do local está em andamento. Pedimos desculpas pelo transtorno.'}
                     </Body1>
                     <Body1>
                         <strong>
                             {model?.note ??
-                                "Note: If this message doesn't resolve after a significant duration, refresh the browser."}
+                                "Nota: Se esta mensagem não for resolvida após um período significativo, atualize o navegador."}
                         </strong>
                     </Body1>
                 </div>
             ) : (
                 <div className={classes.informativeView}>
-                    <Title3>Connecting...</Title3>
+                    <Title3>Conectando...</Title3>
                     <Spinner />
                     <Body1>
-                        This app expects to find a server running at <strong>{BackendServiceUrl}</strong>
+                        Este aplicativo espera encontrar um servidor rodando em <strong>{BackendServiceUrl}</strong>
                     </Body1>
                     <Body1>
-                        To run the server locally, use Visual Studio, Visual Studio Code, or type the following command:{' '}
+                        Para executar o servidor localmente, use Visual Studio, Visual Studio Code ou digite o seguinte comando:{' '}
                         <code>
                             <strong>dotnet run</strong>
                         </code>
                     </Body1>
                     <Body1>
-                        If running locally, ensure that you have the{' '}
+                        Se estiver executando localmente, certifique-se de ter a variável{' '}
                         <code>
                             <b>REACT_APP_BACKEND_URI</b>
                         </code>{' '}
-                        variable set in your <b>webapp/.env</b> file
+                         definida em seu <b>webapp/.env</b> file
                     </Body1>
                 </div>
             )}

@@ -16,7 +16,7 @@ import {
     DialogTitle,
     DialogTrigger,
     Divider,
-    Label,
+    // Label,
     makeStyles,
     shorthands,
     tokens,
@@ -73,7 +73,7 @@ export const SettingsDialog: React.FC<ISettingsDialogProps> = ({ open, closeDial
                         <Accordion collapsible multiple defaultOpenItems={['basic']}>
                             <AccordionItem value="basic">
                                 <AccordionHeader expandIconPosition="end">
-                                    <h3>Basic</h3>
+                                    <h3>Básico</h3>
                                 </AccordionHeader>
                                 <AccordionPanel>
                                     <SettingSection key={settings[0].title} setting={settings[0]} contentOnly />
@@ -82,11 +82,12 @@ export const SettingsDialog: React.FC<ISettingsDialogProps> = ({ open, closeDial
                             <Divider />
                             <AccordionItem value="advanced">
                                 <AccordionHeader expandIconPosition="end" data-testid="advancedSettingsFoldup">
-                                    <h3>Advanced</h3>
+                                    <h3>Avançado</h3>
                                 </AccordionHeader>
                                 <AccordionPanel>
                                     <Body1 color={tokens.colorNeutralForeground3}>
-                                        Some settings are disabled by default as they are not fully supported yet.
+                                        Algumas configurações estão desabilitadas por padrão porque ainda não são
+                                        totalmente suportadas.
                                     </Body1>
                                     {settings.slice(1).map((setting) => {
                                         return <SettingSection key={setting.title} setting={setting} />;
@@ -96,13 +97,13 @@ export const SettingsDialog: React.FC<ISettingsDialogProps> = ({ open, closeDial
                             <Divider />
                             <AccordionItem value="about">
                                 <AccordionHeader expandIconPosition="end">
-                                    <h3>About</h3>
+                                    <h3>Sobre</h3>
                                 </AccordionHeader>
                                 <AccordionPanel>
                                     <Body1 color={tokens.colorNeutralForeground3}>
-                                        Backend version: {serviceInfo.version}
+                                        Versão de Back-End: {serviceInfo.version}
                                         <br />
-                                        Frontend version: {process.env.REACT_APP_SK_VERSION ?? '-'}
+                                        Versão Front-End: {process.env.REACT_APP_SK_VERSION ?? '-'}
                                         <br />
                                         {process.env.REACT_APP_SK_BUILD_INFO}
                                     </Body1>
@@ -113,15 +114,15 @@ export const SettingsDialog: React.FC<ISettingsDialogProps> = ({ open, closeDial
                     </DialogContent>
                 </DialogBody>
                 <DialogActions position="start" className={dialogClasses.footer}>
-                    <Label size="small" color="brand" className={classes.footer}>
+                    {/*   <Label size="small" color="brand" className={classes.footer}>
                         Join the Semantic Kernel open source community!{' '}
                         <a href="https://aka.ms/semantic-kernel" target="_blank" rel="noreferrer">
                             Learn More
                         </a>
-                    </Label>
+                    </Label> */}
                     <DialogTrigger disableButtonEnhancement>
                         <Button appearance="secondary" data-testid="userSettingsCloseButton">
-                            Close
+                            Fechar
                         </Button>
                     </DialogTrigger>
                 </DialogActions>

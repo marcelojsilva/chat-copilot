@@ -24,14 +24,14 @@ export const FileUploader: React.FC<FileUploaderProps> = forwardRef<HTMLInputEle
                 event.stopPropagation();
                 event.preventDefault();
                 if (!selectedFiles || selectedFiles.length !== 1) {
-                    console.error('There are none or multiple selected files.');
+                    console.error('Não há nenhum ou vários arquivos selecionados.');
                     return;
                 }
                 const file = selectedFiles.item(0);
                 if (file) {
                     onSelectedFile(file);
                 } else {
-                    console.error('The selected file contains no file object.');
+                    console.error('O arquivo selecionado não contém nenhum objeto de arquivo.');
                 }
             },
             [onSelectedFile],
@@ -45,7 +45,7 @@ export const FileUploader: React.FC<FileUploaderProps> = forwardRef<HTMLInputEle
                 className={classes.root}
                 accept={acceptedExtensions?.join(',')}
                 onChange={onChange}
-                title="Upload a .pdf, .txt, .jpg, .png or .tiff file"
+                title="Carregar arquivos tipo: .pdf, .txt, .jpg, .png, .tiff"
             />
         );
     },

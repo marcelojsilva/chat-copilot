@@ -150,12 +150,12 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
             <DialogTrigger>
                 <Button
                     data-testid="openPluginDialogButton"
-                    aria-label="Enable plugin"
+                    aria-label="Habilitar plugin"
                     appearance="primary"
                     disabled={inactive}
                     title={inactive ? inactiveReason : ''}
                 >
-                    Enable
+                    Habilitar
                 </Button>
             </DialogTrigger>
             <DialogSurface>
@@ -182,10 +182,10 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                         </DialogTitle>
                         <DialogContent className={classes.content}>
                             {errorMessage && <Body1 className={classes.error}>{errorMessage}</Body1>}
-                            You are about to enable {name}.{' '}
+                            Você está prestes a ativar {name}.{' '}
                             {authRequirements.scopes && (
                                 <>
-                                    To continue, you will authorize the following:{' '}
+                                    Para continuar, você autorizará o seguinte:{' '}
                                     <div className={classes.scopes}>
                                         {authRequirements.scopes.map((scope) => {
                                             return <Text key={scope}>{scope}</Text>;
@@ -194,12 +194,12 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                                 </>
                             )}
                             {(usernameRequired || emailRequired || accessTokenRequired) && (
-                                <Body1Strong> Log in to {name} to continue</Body1Strong>
+                                <Body1Strong> Logar em {name} para continuar</Body1Strong>
                             )}
                             {(msalRequired || oauthRequired) && (
                                 <Body1>
                                     {' '}
-                                    {`You will be prompted into sign in with ${publisher} on the next screen if you haven't already provided prior consent.`}
+                                    {`Você será solicitado a fazer login com ${publisher} na próxima tela se você ainda não tiver dado consentimento prévio.`}
                                 </Body1>
                             )}
                             {usernameRequired && (
@@ -257,9 +257,9 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                                         placeholder={`Enter your ${name} Personal Access Token`}
                                     />
                                     <Body1>
-                                        For more information on how to generate a PAT for {name},{' '}
+                                        Para obter mais informações sobre como gerar um PAT para {name},{' '}
                                         <a href={authRequirements.helpLink} target="_blank" rel="noreferrer noopener">
-                                            click here
+                                        clique aqui
                                         </a>
                                         .
                                     </Body1>
@@ -268,7 +268,7 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                             {apiProperties && (
                                 <>
                                     <Body1Strong> Configuration </Body1Strong>
-                                    <Body1>{`Some additional information is required to enable ${name}'s REST APIs.`}</Body1>
+                                    <Body1>{`Algumas informações adicionais são necessárias para ativar APIs REST ${name}.`}</Body1>
                                     {Object.keys(apiProperties).map((property) => {
                                         const propertyDetails = apiPropertiesInput[property];
                                         return (
@@ -287,17 +287,17 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                                                             },
                                                         });
                                                     }}
-                                                    placeholder={`Enter the ${propertyDetails.description ?? property}`}
+                                                    placeholder={`Introduzir o ${propertyDetails.description ?? property}`}
                                                 />
                                                 {propertyDetails.helpLink && (
                                                     <Body1>
-                                                        For more details on obtaining this information,{' '}
+                                                        Para obter mais detalhes sobre como obter essas informações,{' '}
                                                         <a
                                                             href={propertyDetails.helpLink}
                                                             target="_blank"
                                                             rel="noreferrer noopener"
                                                         >
-                                                            click here
+                                                            clique aqui
                                                         </a>
                                                         .
                                                     </Body1>
@@ -310,7 +310,7 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                         </DialogContent>
                         <DialogActions>
                             <DialogTrigger>
-                                <Button appearance="secondary">Cancel</Button>
+                                <Button appearance="secondary">Cancelar</Button>
                             </DialogTrigger>
                             <Button
                                 data-testid="enablePluginButton"
@@ -318,7 +318,7 @@ export const PluginConnector: React.FC<PluginConnectorProps> = ({
                                 appearance="primary"
                                 disabled={!!errorMessage}
                             >
-                                Enable
+                                habilitar
                             </Button>
                         </DialogActions>
                     </DialogBody>

@@ -91,7 +91,7 @@ export const PluginGallery: React.FC = () => {
                     .catch((error: Error) => {
                         dispatch(
                             addAlert({
-                                message: `Failed to fetch hosted plugin ${availablePlugin.name}: ${error.message}`,
+                                message: `Falha ao buscar o plugin hospedado ${availablePlugin.name}: ${error.message}`,
                                 type: AlertType.Error,
                             }),
                         );
@@ -139,16 +139,16 @@ export const PluginGallery: React.FC = () => {
                         }
                     >
                         <Subtitle1 block className={classes.title}>
-                            Enable Chat Copilot Plugins
+                            Ativar plug-ins do Chat AI
                         </Subtitle1>
                         <Body1 as="p" block className={classes.description}>
-                            Authorize plugins and have more powerful bots!
+                        Autorize plugins e tenha bots mais poderosos!
                         </Body1>
                     </DialogTitle>
                     <DialogContent className={classes.dialogContent}>
                         <AddPluginCard />
                         <Subtitle2 block className={classes.title}>
-                            Available Plugins
+                        Plug-ins disponíveis
                         </Subtitle2>
                         <div className={classes.content}>
                             {Object.entries(plugins).map((entry) => {
@@ -157,7 +157,7 @@ export const PluginGallery: React.FC = () => {
                             })}
                         </div>
                         <Subtitle2 block className={classes.title}>
-                            Hosted Plugins
+                        Plug-ins hospedados
                         </Subtitle2>
                         <div className={classes.content}>
                             {Object.entries(hostedPlugins).map((entry) => {
@@ -166,9 +166,9 @@ export const PluginGallery: React.FC = () => {
                             })}
                         </div>
                         <Label size="small" color="brand">
-                            Want to learn more about plugins? Click{' '}
+                            Quer saber mais sobre plug-ins? Clique{' '}
                             <Link href="https://aka.ms/sk-plugins-howto" target="_blank" rel="noreferrer">
-                                here
+                                aqui
                             </Link>
                             .
                         </Label>

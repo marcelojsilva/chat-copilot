@@ -103,7 +103,7 @@ export const useChat = () => {
                     return newChat.id;
                 });
         } catch (e: any) {
-            const errorMessage = `Unable to create new chat. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Não foi possível criar um novo bate-papo. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
     };
@@ -158,13 +158,13 @@ export const useChat = () => {
             dispatch(updateBotResponseStatus({ chatId, status: undefined }));
 
             const errorDetails = getErrorDetails(e);
-            if (errorDetails.includes('Failed to process plan')) {
+            if (errorDetails.includes('Falha ao processar o plano')) {
                 // Error should already be reflected in bot response message. Skip alert.
                 return;
             }
 
-            const action = processPlan ? 'execute plan' : 'generate bot response';
-            const errorMessage = `Unable to ${action}. Details: ${getErrorDetails(e)}`;
+            const action = processPlan ? 'executar plano' : 'gerar resposta do bot';
+            const errorMessage = `Incapaz de ${action}. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
     };
@@ -213,7 +213,7 @@ export const useChat = () => {
 
             return true;
         } catch (e: any) {
-            const errorMessage = `Unable to load chats. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Não foi possível carregar os Chats. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
 
             return false;
@@ -224,7 +224,7 @@ export const useChat = () => {
         try {
             return await botService.downloadAsync(chatId, await AuthHelper.getSKaaSAccessToken(instance, inProgress));
         } catch (e: any) {
-            const errorMessage = `Unable to download the bot. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Não foi possível baixar o bot. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
 
@@ -256,7 +256,7 @@ export const useChat = () => {
                 dispatch(addConversation(newChat));
             });
         } catch (e: any) {
-            const errorMessage = `Unable to upload the bot. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Não foi possível fazer upload do bot. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
     };
@@ -272,7 +272,7 @@ export const useChat = () => {
                 await AuthHelper.getSKaaSAccessToken(instance, inProgress),
             );
         } catch (e: any) {
-            const errorMessage = `Unable to get chat files. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Não foi possível obter arquivos de Chat. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
 
@@ -287,7 +287,7 @@ export const useChat = () => {
                 await AuthHelper.getSKaaSAccessToken(instance, inProgress),
             );
         } catch (e: any) {
-            const errorMessage = `Unable to get semantic memories. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Incapaz de obter memórias semânticas. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
 
@@ -307,11 +307,11 @@ export const useChat = () => {
             let errorDetails = getErrorDetails(e);
 
             // Disable Content Safety if request was unauthorized
-            const contentSafetyDisabledRegEx = /Access denied: \[Content Safety] Failed to analyze image./g;
+            const contentSafetyDisabledRegEx = /Acesso negado: \[Content Safety] Falha ao analisar a imagem./g;
             if (contentSafetyDisabledRegEx.test(errorDetails)) {
                 if (features[FeatureKeys.AzureContentSafety].enabled) {
                     errorDetails =
-                        'Unable to analyze image. Content Safety is currently disabled or unauthorized service-side. Please contact your admin to enable.';
+                        'Não é possível analisar a imagem. A segurança de conteúdo está atualmente desativada ou não autorizada no lado do serviço. Entre em contato com seu administrador para ativar.';
                 }
 
                 dispatch(
@@ -319,7 +319,7 @@ export const useChat = () => {
                 );
             }
 
-            const errorMessage = `Failed to upload document(s). Details: ${errorDetails}`;
+            const errorMessage = `Falha ao carregar documento(s). Detalhes: ${errorDetails}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
     };
@@ -362,7 +362,7 @@ export const useChat = () => {
                 dispatch(addConversation(newChat));
             });
         } catch (e: any) {
-            const errorMessage = `Error joining chat ${chatId}. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Erro ao entrar no bate-papo ${chatId}. Detalhes: ${getErrorDetails(e)}`;
             return { success: false, message: errorMessage };
         }
 
@@ -379,7 +379,7 @@ export const useChat = () => {
                 await AuthHelper.getSKaaSAccessToken(instance, inProgress),
             );
         } catch (e: any) {
-            const errorMessage = `Error editing chat ${chatId}. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Erro ao editar o bate-papo ${chatId}. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         }
     };
@@ -388,7 +388,7 @@ export const useChat = () => {
         try {
             return await chatService.getServiceInfoAsync(await AuthHelper.getSKaaSAccessToken(instance, inProgress));
         } catch (e: any) {
-            const errorMessage = `Error getting service options. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Erro ao obter opções de serviço. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
 
             return undefined;
@@ -408,12 +408,12 @@ export const useChat = () => {
                 }
             })
             .catch((e: any) => {
-                const errorDetails = (e as Error).message.includes('Failed to delete resources for chat id')
-                    ? "Some or all resources associated with this chat couldn't be deleted. Please try again."
-                    : `Details: ${(e as Error).message}`;
+                const errorDetails = (e as Error).message.includes('Falha ao excluir recursos do ID do chat')
+                    ? "Não foi possível excluir alguns ou todos os recursos associados a este chat. Por favor, tente novamente."
+                    : `Detalhes: ${(e as Error).message}`;
                 dispatch(
                     addAlert({
-                        message: `Unable to delete chat {${friendlyChatName}}. ${errorDetails}`,
+                        message: `Não foi possível excluir o chat {${friendlyChatName}}. ${errorDetails}`,
                         type: AlertType.Error,
                         onRetry: () => void deleteChat(chatId),
                     }),
@@ -432,10 +432,10 @@ export const useChat = () => {
         let message = 'Run plan' + (planGoal ? ` with goal of: ${planGoal}` : '');
         switch (planState) {
             case PlanState.Rejected:
-                message = 'No, cancel';
+                message = 'Não, cancelar';
                 break;
             case PlanState.Approved:
-                message = 'Yes, proceed';
+                message = 'Sim, prossiga';
                 break;
         }
 
@@ -481,7 +481,7 @@ export function getFriendlyChatName(convo: ChatState): string {
     // If the chat title is the default Copilot timestamp, use the first user message as the title.
     // If no user messages exist, use 'New Chat' as the title.
     const friendlyTitle = autoGeneratedTitleRegex.test(convo.title)
-        ? firstUserMessage?.content ?? 'New Chat'
+        ? firstUserMessage?.content ?? 'Novo Chat'
         : convo.title;
 
     // Truncate the title if it is too long

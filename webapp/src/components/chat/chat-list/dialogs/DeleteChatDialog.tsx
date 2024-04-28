@@ -41,24 +41,24 @@ export const DeleteChatDialog: React.FC<IEditChatNameProps> = ({ chatId }) => {
     return (
         <Dialog modalType="alert">
             <DialogTrigger>
-                <Tooltip content={'Delete chat session'} relationship="label">
+                <Tooltip content={'Excluir sessão de Chat'} relationship="label">
                     <Button icon={<Delete16 />} appearance="transparent" aria-label="Edit" />
                 </Tooltip>
             </DialogTrigger>
             <DialogSurface className={classes.root}>
                 <DialogBody>
-                    <DialogTitle>Are you sure you want to delete chat: {chatName}?</DialogTitle>
+                    <DialogTitle>Tem certeza de que deseja excluir o Chat: {chatName}?</DialogTitle>
                     <DialogContent>
-                        This action will permanently delete the chat, and any associated resources and memories, for all
-                        participants, including Chat Copilot.
+                        Esta ação excluirá permanentemente o bate-papo e quaisquer recursos e memórias associados para
+                        todos participantes, incluindo Chat AI.
                     </DialogContent>
                     <DialogActions className={classes.actions}>
                         <DialogTrigger action="close" disableButtonEnhancement>
-                            <Button appearance="secondary">Cancel</Button>
+                            <Button appearance="secondary">Cancelar</Button>
                         </DialogTrigger>
                         <DialogTrigger action="close" disableButtonEnhancement>
                             <Button appearance="primary" onClick={onDeleteChat}>
-                                Delete
+                                Excluir
                             </Button>
                         </DialogTrigger>
                     </DialogActions>

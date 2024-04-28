@@ -63,16 +63,16 @@ export const InvitationJoinDialog: React.FC<InvitationJoinDialogProps> = ({ onCl
                         <DialogTitle>Join a Bot</DialogTitle>
                         <DialogContent className={classes.content}>
                             <Label data-testid="enterChatIDLabel" required htmlFor="chat-id-input">
-                                Please enter the chat ID of the chat you would like to join
+                                Por favor, insira o ID do chat do qual você gostaria de participar
                             </Label>
                             <Input required type="text" id="chat-id-input" />
                         </DialogContent>
                         <DialogActions>
                             <Button appearance="secondary" onClick={onCloseDialog}>
-                                Cancel
+                                Cancelar
                             </Button>
                             <Button data-testid="joinChatButton" type="submit" appearance="primary">
-                                Join
+                                Juntar-se
                             </Button>
                         </DialogActions>
                     </DialogBody>

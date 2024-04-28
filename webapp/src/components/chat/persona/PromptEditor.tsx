@@ -74,7 +74,7 @@ export const PromptEditor: React.FC<PromptEditorProps> = ({
         if (modificationHandler) {
             modificationHandler(value).catch((error) => {
                 setValue(prompt);
-                const message = `Error saving the new prompt: ${(error as Error).message}`;
+                const message = `Erro ao salvar o novo prompt: ${(error as Error).message}`;
                 dispatch(
                     addAlert({
                         type: AlertType.Error,
@@ -111,7 +111,7 @@ export const PromptEditor: React.FC<PromptEditorProps> = ({
                         onClick={onSaveButtonClick}
                         disabled={value.length <= 0 || value === prompt || conversations[chatId].disabled}
                     >
-                        Save
+                        Salvar
                     </Button>
                 </div>
             )}

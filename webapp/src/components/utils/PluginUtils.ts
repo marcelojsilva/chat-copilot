@@ -19,41 +19,41 @@ export const isValidPluginManifest = (manifest?: PluginManifest): manifest is Pl
     });
 
     if (missingKeys.length > 0) {
-        throw new Error(`Plugin manifest is missing the following keys: ${missingKeys.toLocaleString()}`);
+        throw new Error(`O manifesto do plug-in não possui as seguintes chaves: ${missingKeys.toLocaleString()}`);
     }
 
     // Check that the auth type is valid
     const authType = manifest.auth.type;
     if (!isManifestAuthType(manifest.auth.type)) {
-        throw new Error(`Invalid auth type: ${authType}`);
+        throw new Error(`Tipo de autenticação inválida: ${authType}`);
     }
 
     // Check that the auth properties match the auth type
     if (requiresUserLevelAuth(manifest.auth)) {
         if (!('authorization_type' in manifest.auth)) {
-            throw new Error('Missing authorization_type for user_http auth');
+            throw new Error('authorization_type ausente para autenticação user_http');
         }
         const authHttpType = manifest.auth.authorization_type;
         if (!isHttpAuthorizationType(authHttpType)) {
-            throw new Error(`Invalid authorization_type for user_http auth: ${authHttpType as string}`);
+            throw new Error(`authorization_type para autenticação user_http: ${authHttpType as string}`);
         }
     }
 
     // Check that the api type is valid
     const apiType = manifest.api.type;
     if ((apiType as unknown) !== 'openapi') {
-        throw new Error(`Invalid api type: ${apiType as string}. Only openapi is supported.`);
+        throw new Error(`Tipo de API inválida: ${apiType as string}. Apenas APIs OpenApi são compatíveis.`);
     }
 
     // Check that the api url is valid
     const apiUrl = manifest.api.url;
     if (!apiUrl.startsWith('http')) {
-        throw new Error(`Invalid api url: ${apiUrl}. Must start with http or https.`);
+        throw new Error(`URL de API inválida: ${apiUrl}. Deve começar com http ou https.`);
     } else {
         try {
             new URL(apiUrl);
         } catch {
-            throw new Error(`Invalid api url: ${apiUrl}`);
+            throw new Error(`URL de API inválida: ${apiUrl}`);
         }
     }
 

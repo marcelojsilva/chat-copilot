@@ -45,7 +45,7 @@ export const useGraph = () => {
                 if (activeUserInfo && tenantId !== activeUserInfo.id.split('.')[1]) {
                     userData[objectId] = {
                         id: objectId,
-                        displayName: 'External User',
+                        displayName: 'Usuário Externo',
                     };
                 } else {
                     // Only fetch users that haven't already been loaded
@@ -60,7 +60,7 @@ export const useGraph = () => {
 
                 // Retry any users that failed with transient (5xx) errors up to 3 times
                 while (usersToRetry.length > 0 && retries <= MAX_RETRIES) {
-                    console.log(`Retrying batch request  ${retries}/${MAX_RETRIES}`);
+                    console.log(`Tentando novamente solicitação em lote  ${retries}/${MAX_RETRIES}`);
                     await makeBatchGetUsersRequest(usersToRetry, loadedUsers, usersToRetry);
                     retries++;
                 }
@@ -73,7 +73,7 @@ export const useGraph = () => {
                 usersToRetry.forEach((userId) => {
                     userData[userId] = {
                         id: userId,
-                        displayName: 'Unknown',
+                        displayName: 'Desconhecido',
                     };
                 });
             }
@@ -153,7 +153,7 @@ export const useGraph = () => {
             // Failed to fetch, user data unavailable
             return {
                 id: userIds[response.id],
-                displayName: 'Unknown',
+                displayName: 'Desconhecido',
             };
         }
         return null;

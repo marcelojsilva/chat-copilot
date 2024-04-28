@@ -112,7 +112,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ isDraggingOver, onDragLeav
 
         initSpeechRecognizer().catch((e) => {
             const errorDetails = getErrorDetails(e);
-            const errorMessage = `Unable to initialize speech recognizer. Details: ${errorDetails}`;
+            const errorMessage = `Não foi possível inicializar o reconhecimento de fala. Detalhes: ${errorDetails}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         });
     }, [dispatch, instance, inProgress]);
@@ -145,7 +145,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ isDraggingOver, onDragLeav
         dispatch(editConversationInput({ id: selectedId, newInput: '' }));
         dispatch(updateBotResponseStatus({ chatId: selectedId, status: 'Calling the kernel' }));
         onSubmit({ value, messageType, chatId: selectedId }).catch((error) => {
-            const message = `Error submitting chat input: ${(error as Error).message}`;
+            const message = `Erro ao enviar entrada do chat: ${(error as Error).message}`;
             log(message);
             dispatch(
                 addAlert({
@@ -169,8 +169,8 @@ export const ChatInput: React.FC<ChatInputProps> = ({ isDraggingOver, onDragLeav
             <Alerts />
             <div className={classes.content}>
                 <Textarea
-                    title="Chat input"
-                    aria-label="Chat input field. Click enter to submit input."
+                    title="Entrada do Chat"
+                    aria-label="Campo de entrada do Chat. Utilize a tecla Enter para enviar o texto."
                     ref={textAreaRef}
                     id="chat-input"
                     resize="vertical"
@@ -181,7 +181,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ isDraggingOver, onDragLeav
                             : classes.textarea,
                     }}
                     className={classes.input}
-                    value={isDraggingOver ? 'Drop your files here' : value}
+                    value={isDraggingOver ? 'Arraste seus arquivos aqui' : value}
                     onDrop={handleDrop}
                     onFocus={() => {
                         // update the locally stored value to the current value
@@ -240,8 +240,8 @@ export const ChatInput: React.FC<ChatInputProps> = ({ isDraggingOver, onDragLeav
                         appearance="transparent"
                         icon={<AttachRegular />}
                         onClick={() => documentFileRef.current?.click()}
-                        title="Attach file"
-                        aria-label="Attach file button"
+                        title="Anexar arquivo"
+                        aria-label="Botão anexar arquivo"
                     />
                     {importingDocuments && importingDocuments.length > 0 && <Spinner size="tiny" />}
                 </div>
@@ -255,7 +255,7 @@ export const ChatInput: React.FC<ChatInputProps> = ({ isDraggingOver, onDragLeav
                         />
                     )}
                     <Button
-                        title="Submit"
+                        title="Enviar"
                         aria-label="Submit message"
                         appearance="transparent"
                         icon={<SendRegular />}

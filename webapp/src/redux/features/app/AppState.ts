@@ -79,16 +79,16 @@ export const Features = {
     },
     [FeatureKeys.SimplifiedExperience]: {
         enabled: true,
-        label: 'Simplified Chat Experience',
+        label: 'Experiência de bate-papo simplificada',
     },
     [FeatureKeys.PluginsPlannersAndPersonas]: {
         enabled: true,
-        label: 'Plugins & Planners & Personas',
-        description: 'The Plans and Persona tabs are hidden until you turn this on',
+        label: 'Plugins, planejadores e personas',
+        description: 'As guias Planos e Persona ficam ocultas até você ativar esta opção',
     },
     [FeatureKeys.AzureContentSafety]: {
         enabled: false,
-        label: 'Azure Content Safety',
+        label: 'Segurança de conteúdo do Azure',
         inactive: true,
     },
     [FeatureKeys.AzureAISearch]: {
@@ -98,17 +98,17 @@ export const Features = {
     },
     [FeatureKeys.BotAsDocs]: {
         enabled: false,
-        label: 'Export Chat Sessions',
+        label: 'Exportar sessões de chat',
     },
     [FeatureKeys.MultiUserChat]: {
         enabled: false,
         label: 'Live Chat Session Sharing',
-        description: 'Enable multi-user chat sessions. Not available when authorization is disabled.',
+        description: 'Habilite sessões de bate-papo multiusuário. Não disponível quando a autorização está desativada.',
     },
     [FeatureKeys.RLHF]: {
         enabled: false,
-        label: 'Reinforcement Learning from Human Feedback',
-        description: 'Enable users to vote on model-generated responses. For demonstration purposes only.',
+        label: 'Aprendizagem por reforço com feedback humano',
+        description: 'Permita que os usuários votem nas respostas geradas pelo modelo. Apenas para fins de demonstração.',
         // TODO: [Issue #42] Send and store feedback in backend
     },
 };
@@ -132,7 +132,7 @@ export const Settings = [
     },
     {
         title: 'Experimental',
-        description: 'The related icons and menu options are hidden until you turn this on',
+        description: 'Os ícones e opções de menu relacionados ficam ocultos até você ativar esta opção',
         features: [FeatureKeys.BotAsDocs, FeatureKeys.MultiUserChat, FeatureKeys.RLHF],
     },
 ];

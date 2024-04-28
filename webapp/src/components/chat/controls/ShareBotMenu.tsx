@@ -36,7 +36,7 @@ export const ShareBotMenu: FC<ShareBotMenuProps> = ({ chatId, chatTitle }) => {
         <div>
             <Menu>
                 <MenuTrigger disableButtonEnhancement>
-                    <Tooltip content="Share" relationship="label">
+                    <Tooltip content="Compartilhar" relationship="label">
                         <Button data-testid="shareButton" icon={<ShareRegular />} appearance="transparent" />
                     </Tooltip>
                 </MenuTrigger>
@@ -48,7 +48,7 @@ export const ShareBotMenu: FC<ShareBotMenuProps> = ({ chatId, chatTitle }) => {
                             onClick={onDownloadBotClick}
                             disabled={!features[FeatureKeys.BotAsDocs].enabled}
                         >
-                            Download your Bot
+                            Baixe seu Bot
                         </MenuItem>
 
                         <MenuItem
@@ -59,7 +59,7 @@ export const ShareBotMenu: FC<ShareBotMenuProps> = ({ chatId, chatTitle }) => {
                             }}
                             disabled={!features[FeatureKeys.MultiUserChat].enabled}
                         >
-                            Invite others to your Bot
+                            Convide outras pessoas para o seu Bot
                         </MenuItem>
                     </MenuList>
                 </MenuPopover>

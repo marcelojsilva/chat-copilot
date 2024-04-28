@@ -41,7 +41,7 @@ export const PersonaTab: React.FC = () => {
                 chatId={selectedId}
                 prompt={chatState.systemDescription}
                 isEditable={true}
-                info="The prompt that defines the chat bot's persona."
+                info="O prompt que define a personalidade do chatbot."
                 modificationHandler={async (newSystemDescription: string) => {
                     await chat
                         .editChat(selectedId, chatState.title, newSystemDescription, chatState.memoryBalance)
@@ -56,18 +56,18 @@ export const PersonaTab: React.FC = () => {
                 }}
             />
             <PromptEditor
-                title="Short Term Memory"
+                title="Memória de Curto Prazo (Short Term Memory)"
                 chatId={selectedId}
                 prompt={`<label>: <details>\n${shortTermMemory}`}
                 isEditable={false}
-                info="Extract information for a short period of time, such as a few seconds or minutes. It should be useful for performing complex cognitive tasks that require attention, concentration, or mental calculation."
+                info="Extraia informações por um curto período de tempo, como alguns segundos ou minutos. Deve ser útil para realizar tarefas cognitivas complexas que requerem atenção, concentração ou cálculo mental."
             />
             <PromptEditor
-                title="Long Term Memory"
+                title="Memória de Longo Prazo (Long Term Memory)"
                 chatId={selectedId}
                 prompt={`<label>: <details>\n${longTermMemory}`}
                 isEditable={false}
-                info="Extract information that is encoded and consolidated from other memory types, such as working memory or sensory memory. It should be useful for maintaining and recalling one's personal identity, history, and knowledge over time."
+                info="Extraia informações codificadas e consolidadas de outros tipos de memória, como memória de trabalho ou memória sensorial. Deve ser útil para manter e relembrar a identidade pessoal, a história e o conhecimento ao longo do tempo."
             />
             <MemoryBiasSlider />
         </TabView>

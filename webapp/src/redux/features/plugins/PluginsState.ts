@@ -70,7 +70,7 @@ export const initialState: PluginsState = {
         [BuiltInPlugins.MsGraph]: {
             name: BuiltInPlugins.MsGraph,
             publisher: 'Microsoft',
-            description: 'Use your Microsoft Account to access your personal Graph information and Microsoft services.',
+            description: 'Use sua conta da Microsoft para acessar suas informações pessoais do Graph e serviços da Microsoft.',
             enabled: false,
             authRequirements: {
                 Msal: true,
@@ -83,7 +83,7 @@ export const initialState: PluginsState = {
             name: BuiltInPlugins.Jira,
             publisher: 'Atlassian',
             description:
-                'Authorize Chat Copilot to link with Jira and retrieve specific issues by providing the issue key.',
+                'Autorize o Chat Copilot a vincular-se ao Jira e recuperar problemas específicos fornecendo a chave do problema.',
             enabled: false,
             authRequirements: {
                 email: true,
@@ -105,7 +105,7 @@ export const initialState: PluginsState = {
             name: BuiltInPlugins.GitHub,
             publisher: 'Microsoft',
             description:
-                'Integrate Github with Chat Copilot, i.e., allow Chat CopilotBot to list active Pull Requests for you.',
+                'Integre o Github ao Chat Copilot, ou seja, permita que o Chat CopilotBot liste solicitações pull ativas para você.',
             enabled: false,
             authRequirements: {
                 personalAccessToken: true,
@@ -138,3 +138,4 @@ export interface EnablePluginPayload {
     accessToken?: string;
     apiProperties?: AdditionalApiProperties;
 }
+

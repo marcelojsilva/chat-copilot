@@ -130,8 +130,8 @@ export const DocumentsTab: React.FC = () => {
     const { columns, rows } = useTable(resources);
     return (
         <TabView
-            title="Documents"
-            learnMoreDescription="document embeddings"
+            title="Documentos"
+            learnMoreDescription="incorporações de documentos (document embeddings)"
             learnMoreLink="https://aka.ms/sk-docs-vectordb"
         >
             <div className={classes.functional}>
@@ -167,7 +167,7 @@ export const DocumentsTab: React.FC = () => {
                                     (importingDocuments && importingDocuments.length > 0)
                                 }
                             >
-                                Upload
+                                Carregar (Upload)
                             </Button>
                         </Tooltip>
                     </MenuTrigger>
@@ -182,7 +182,7 @@ export const DocumentsTab: React.FC = () => {
                                     (importingDocuments && importingDocuments.length > 0)
                                 }
                             >
-                                New local chat document
+                                Novo documento de chat local
                             </MenuItem>
                             <MenuItem
                                 data-testid="addNewLocalDoc"
@@ -193,7 +193,7 @@ export const DocumentsTab: React.FC = () => {
                                     (importingDocuments && importingDocuments.length > 0)
                                 }
                             >
-                                New global document
+                                Novo documento global
                             </MenuItem>
                         </MenuList>
                     </MenuPopover>
@@ -201,7 +201,7 @@ export const DocumentsTab: React.FC = () => {
                 {importingDocuments && importingDocuments.length > 0 && <Spinner size="tiny" />}
                 {/* Hardcode vector database as we don't support switching vector store dynamically now. */}
                 <div className={classes.vectorDatabase}>
-                    <Label size="large">Vector Database:</Label>
+                    <Label size="large">Banco de dados de vetores (Vector Database):</Label>
                     <RadioGroup
                         defaultValue={serviceInfo.memoryStore.selectedType}
                         layout="horizontal"
@@ -220,7 +220,7 @@ export const DocumentsTab: React.FC = () => {
                     </RadioGroup>
                 </div>
             </div>
-            <Table aria-label="External resource table" className={classes.table}>
+            <Table aria-label="Tabela de recursos externos" className={classes.table}>
                 <TableHeader>
                     <TableRow>{columns.map((column) => column.renderHeaderCell())}</TableRow>
                 </TableHeader>
@@ -247,7 +247,7 @@ function useTable(resources: ChatMemorySource[]) {
             columnId: 'name',
             renderHeaderCell: () => (
                 <TableHeaderCell key="name" {...headerSortProps('name')}>
-                    Name
+                    Nome
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -268,7 +268,7 @@ function useTable(resources: ChatMemorySource[]) {
             columnId: 'createdOn',
             renderHeaderCell: () => (
                 <TableHeaderCell key="createdOn" {...headerSortProps('createdOn')}>
-                    Created on
+                    Criado em
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -285,7 +285,7 @@ function useTable(resources: ChatMemorySource[]) {
             columnId: 'fileSize',
             renderHeaderCell: () => (
                 <TableHeaderCell key="fileSize" {...headerSortProps('fileSize')}>
-                    Size (bytes)
+                    Tamanho (bytes)
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -304,7 +304,7 @@ function useTable(resources: ChatMemorySource[]) {
             columnId: 'access',
             renderHeaderCell: () => (
                 <TableHeaderCell key="access" {...headerSortProps('access')}>
-                    Access
+                    Acesso
                 </TableHeaderCell>
             ),
             renderCell: (item) => (
@@ -321,7 +321,7 @@ function useTable(resources: ChatMemorySource[]) {
             columnId: 'progress',
             renderHeaderCell: () => (
                 <TableHeaderCell key="progress" {...headerSortProps('progress')}>
-                    Progress
+                    Progresso
                 </TableHeaderCell>
             ),
             renderCell: (item) => (

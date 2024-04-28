@@ -107,7 +107,7 @@ export const PlanStepCard: React.FC<PlanStepCardProps> = ({ step, enableEdits, e
                     <CardHeader
                         header={
                             <Body1>
-                                <b className={classes.header}>Step {step.index + 1} •</b> {step.skill_name}.{step.name}
+                                <b className={classes.header}>Etapa {step.index + 1} •</b> {step.skill_name}.{step.name}
                                 <br />
                             </Body1>
                         }
@@ -126,10 +126,10 @@ export const PlanStepCard: React.FC<PlanStepCardProps> = ({ step, enableEdits, e
                                     </DialogTrigger>
                                     <DialogSurface className={classes.dialog}>
                                         <DialogBody>
-                                            <DialogTitle>Are you sure you want to delete this step?</DialogTitle>
+                                            <DialogTitle>Tem certeza de que deseja excluir esta etapa?</DialogTitle>
                                             <DialogContent>
                                                 {
-                                                    "Deleting this step could disrupt the plan's initial logic and cause errors in subsequent steps. Make sure the next steps don't depend on this step's outputs."
+                                                    'A exclusão desta etapa pode interromper a lógica inicial do plano e causar erros nas etapas subsequentes. Certifique-se de que as próximas etapas não dependam dos resultados desta etapa.'
                                                 }
                                             </DialogContent>
                                             <DialogActions>
@@ -140,7 +140,7 @@ export const PlanStepCard: React.FC<PlanStepCardProps> = ({ step, enableEdits, e
                                                             setOpenDialog(false);
                                                         }}
                                                     >
-                                                        Cancel
+                                                        Cancelar
                                                     </Button>
                                                 </DialogTrigger>
                                                 <Button
@@ -150,7 +150,7 @@ export const PlanStepCard: React.FC<PlanStepCardProps> = ({ step, enableEdits, e
                                                         onDeleteStep(step.index);
                                                     }}
                                                 >
-                                                    Yes, Delete Step
+                                                    Sim, excluir Etapa
                                                 </Button>
                                             </DialogActions>
                                         </DialogBody>
@@ -161,7 +161,7 @@ export const PlanStepCard: React.FC<PlanStepCardProps> = ({ step, enableEdits, e
                     />
                     {step.description && (
                         <div className={classes.singleLine}>
-                            <Text weight="semibold">About: </Text> <Text>{step.description}</Text>
+                            <Text weight="semibold">Sobre: </Text> <Text>{step.description}</Text>
                         </div>
                     )}
                     {inputs.length > 0 && (
@@ -170,9 +170,9 @@ export const PlanStepCard: React.FC<PlanStepCardProps> = ({ step, enableEdits, e
                                 <Text weight="semibold">Inputs: </Text>
                                 {enableEdits && validationErrors > 0 && (
                                     <Text className={classes.errorMessage}>
-                                        This step needs some extra information to execute successfully. Please fix any
-                                        inputs containing interpolated variables or fields marked{' '}
-                                        <Text weight="bold"> $???</Text>.
+                                        Esta etapa precisa de algumas informações extras para ser executada com êxito.
+                                        Por favor, corrija qualquer entradas contendo variáveis interpoladas ou campos
+                                        marcados <Text weight="bold"> $???</Text>.
                                     </Text>
                                 )}
                             </div>

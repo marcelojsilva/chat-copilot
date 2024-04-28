@@ -57,14 +57,15 @@ export const StepwiseThoughtProcessView: React.FC<IStepwiseThoughtProcessViewPro
                     expandIconPosition="end"
                     className={stepClasses.header}
                 >
-                    Explore how the stepwise planner reached this result! Click here to show the steps and logic.
+                    Explore como o planejador stepwise alcançou esse resultado! Clique aqui para mostrar as etapas e a
+                    lógica.
                 </AccordionHeader>
             )}
             {showthoughtProcess && (
                 <>
-                    <Body1Strong>Time Taken:</Body1Strong>
+                    <Body1Strong>Tempo gasto:</Body1Strong>
                     <Body1>{stepwiseDetails.timeTaken}</Body1>
-                    <Body1Strong>Plugins Used:</Body1Strong>
+                    <Body1Strong>Plug-ins usados:</Body1Strong>
                     <Body1>
                         {!stepwiseDetails.functionsUsed.startsWith('0') ? stepwiseDetails.functionsUsed : 'None'}
                     </Body1>
@@ -72,7 +73,7 @@ export const StepwiseThoughtProcessView: React.FC<IStepwiseThoughtProcessViewPro
             )}
             {(resultNotFound || showthoughtProcess) && (
                 <>
-                    {<Body1Strong>Steps taken:</Body1Strong>}
+                    {<Body1Strong>Passos dados:</Body1Strong>}
                     <Body1>[THOUGHT PROCESS]</Body1>
                     <Accordion collapsible multiple className={classes.root}>
                         {steps.map((step: StepwiseStep, index: number) => {

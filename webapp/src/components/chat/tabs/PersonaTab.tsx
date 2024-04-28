@@ -75,6 +75,7 @@ export const PersonaTab: React.FC = () => {
                 chatId={selectedId}
                 prompt={chatState.systemDescription}
                 isEditable={true}
+                isInvisible={true}
                 info="The prompt that defines the chat bot's persona."
                 modificationHandler={async (newSystemDescription: string) => {
                     await chat

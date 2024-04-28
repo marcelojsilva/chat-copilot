@@ -46,6 +46,7 @@ interface PromptEditorProps {
     prompt: string;
     isEditable: boolean;
     info: string;
+    isInvisible?: boolean;
     modificationHandler?: (value: string) => Promise<void>;
 }
 
@@ -55,6 +56,7 @@ export const PromptEditor: React.FC<PromptEditorProps> = ({
     prompt,
     isEditable,
     info,
+    isInvisible,
     modificationHandler,
 }) => {
     const classes = useClasses();
@@ -85,8 +87,10 @@ export const PromptEditor: React.FC<PromptEditorProps> = ({
         }
     };
 
+    const rootStyle = isInvisible ? { display: 'none' } : {};
+
     return (
-        <div className={classes.root}>
+        <div className={classes.root} style={rootStyle}>
             <div className={classes.horizontal}>
                 <h3>{title}</h3>
                 <Popover withArrow>

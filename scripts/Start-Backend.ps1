@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Builds and runs the Chat Copilot backend.
+Builds and runs the Chat AI backend.
 #>
 
 # Stop any existing backend API process

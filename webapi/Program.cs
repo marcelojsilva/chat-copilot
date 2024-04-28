@@ -21,7 +21,7 @@ using Microsoft.Extensions.Logging;
 namespace CopilotChat.WebApi;
 
 /// <summary>
-/// Chat Copilot Service
+/// Chat AI Service
 /// </summary>
 public sealed class Program
 {
@@ -94,7 +94,7 @@ public sealed class Program
             .RequireAuthorization();
         app.MapHealthChecks("/healthz");
 
-        // Add Chat Copilot hub for real time communication
+        // Add Chat AI hub for real time communication
         app.MapHub<MessageRelayHub>("/messageRelayHub");
 
         // Enable Swagger for development environments.

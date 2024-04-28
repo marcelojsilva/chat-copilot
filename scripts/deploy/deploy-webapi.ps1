@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Deploy Chat Copilot application to Azure
+Deploy Chat AI application to Azure
 #>
 
 param(

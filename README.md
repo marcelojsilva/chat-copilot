@@ -1,22 +1,22 @@
 **NOTE**: This is a **sample** application to help you understand how Semantic Kernel and AI can work in Web Applications. This sample is **NOT FOR PRODUCTION** deployments.
 
-# Chat Copilot Sample Application
+# Chat AI Sample Application
 
-This sample allows you to build your own integrated large language model (LLM) chat copilot. The sample is built on Microsoft [Semantic Kernel](https://github.com/microsoft/semantic-kernel) and has three components:
+This sample allows you to build your own integrated large language model (LLM) Chat AI. The sample is built on Microsoft [Semantic Kernel](https://github.com/microsoft/semantic-kernel) and has three components:
 
 1. A frontend application [React web app](./webapp/)
 2. A backend REST API [.NET web API service](./webapi/)
 3. A [.NET worker service](./memorypipeline/) for processing semantic memory.
 
-These quick-start instructions run the sample locally. They can also be found on the official Chat Copilot Microsoft Learn documentation page for [getting started](https://learn.microsoft.com/semantic-kernel/chat-copilot/getting-started).
+These quick-start instructions run the sample locally. They can also be found on the official Chat AI Microsoft Learn documentation page for [getting started](https://learn.microsoft.com/semantic-kernel/chat-copilot/getting-started).
 
-To deploy the sample to Azure, please view [Deploying Chat Copilot](./scripts/deploy/README.md) after meeting the [requirements](#requirements) described below.
+To deploy the sample to Azure, please view [Deploying Chat AI](./scripts/deploy/README.md) after meeting the [requirements](#requirements) described below.
 
 > **IMPORTANT:** This sample is for educational purposes only and is not recommended for production deployments.
 
 > **IMPORTANT:** Each chat interaction will call Azure OpenAI/OpenAI which will use tokens that you may be billed for.
 
-![Chat Copilot answering a question](https://learn.microsoft.com/en-us/semantic-kernel/media/chat-copilot-in-action.gif)
+![Chat AI answering a question](https://learn.microsoft.com/en-us/semantic-kernel/media/chat-copilot-in-action.gif)
 
 # Requirements
 
@@ -56,7 +56,7 @@ You will need the following items to run the sample:
 
    > NOTE: If you receive an error that the script is not digitally signed or cannot execute on the system, you may need to [change the execution policy](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3#change-the-execution-policy) (see list of [policies](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3#powershell-execution-policies) and [scopes](https://learn.microsoft.com/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.3#execution-policy-scope)) or [unblock the script](https://learn.microsoft.com/powershell/module/microsoft.powershell.security/get-executionpolicy?view=powershell-7.3#example-4-unblock-a-script-to-run-it-without-changing-the-execution-policy).
 
-1. Configure Chat Copilot.
+1. Configure Chat AI.
 
    ```powershell
    .\Configure.ps1 -AIService {AI_SERVICE} -APIKey {API_KEY} -Endpoint {AZURE_OPENAI_ENDPOINT}
@@ -74,7 +74,7 @@ You will need the following items to run the sample:
 
      Open the `.\Configure.ps1` script to see all of the available parameters.
 
-1. Run Chat Copilot locally. This step starts both the backend API and frontend application.
+1. Run Chat AI locally. This step starts both the backend API and frontend application.
 
    ```powershell
    .\Start.ps1
@@ -121,7 +121,7 @@ You will need the following items to run the sample:
 
    > NOTE: This script uses `homebrew` to install `dotnet-sdk`, `nodejs`, and `yarn`.
 
-1. Configure Chat Copilot.
+1. Configure Chat AI.
 
    1. For OpenAI
 
@@ -154,7 +154,7 @@ You will need the following items to run the sample:
                      --embeddingmodel  {DEPLOYMENT_NAME}
       ```
 
-1. Run Chat Copilot locally. This step starts both the backend API and frontend application.
+1. Run Chat AI locally. This step starts both the backend API and frontend application.
 
    ```bash
    ./start.sh
@@ -176,7 +176,7 @@ By default, the webapi is configured to work without the memory pipeline for syn
 
 ## (Optional) Enable backend authentication via Azure AD
 
-By default, Chat Copilot runs locally without authentication, using a guest user profile. If you want to enable authentication with Azure Active Directory, follow the steps below.
+By default, Chat AI runs locally without authentication, using a guest user profile. If you want to enable authentication with Azure Active Directory, follow the steps below.
 
 ### Requirements
 
@@ -268,7 +268,7 @@ By default, Chat Copilot runs locally without authentication, using a guest user
    - `TENANT_ID` : Your Azure AD tenant ID
    - `AZURE_AD_INSTANCE` _(optional)_: The Azure AD cloud instance for the authenticating users. Defaults to `https://login.microsoftonline.com`.
 
-6. Run Chat Copilot locally. This step starts both the backend API and frontend application.
+6. Run Chat AI locally. This step starts both the backend API and frontend application.
 
    **Powershell**
 
@@ -308,7 +308,7 @@ By default, Chat Copilot runs locally without authentication, using a guest user
    1. Confirm the backend service is running. Open a web browser and navigate to `https://localhost:40443/healthz`
       - You should see a confirmation message: `Healthy`
       - If your browser asks you to acknowledge the risks of visiting an insecure website, you must acknowledge this before the frontend can connect to the backend server.
-   2. Navigate to `http://localhost:3000` or refresh the page to use the Chat Copilot application.
+   2. Navigate to `http://localhost:3000` or refresh the page to use the Chat AI application.
 
 4. **_Issue:_** Yarn is not working.
 
@@ -362,7 +362,7 @@ If you would like to learn more about Semantic Kernel and AI, you may also be in
 
 ## Join the community
 
-We welcome your contributions and suggestions to the Chat Copilot Sample App! One of the easiest
+We welcome your contributions and suggestions to the Chat AI Sample App! One of the easiest
 ways to participate is to engage in discussions in the GitHub repository.
 Bug reports and fixes are welcome!
 

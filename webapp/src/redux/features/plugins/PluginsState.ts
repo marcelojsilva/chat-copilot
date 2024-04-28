@@ -83,7 +83,7 @@ export const initialState: PluginsState = {
             name: BuiltInPlugins.Jira,
             publisher: 'Atlassian',
             description:
-                'Autorize o Chat Copilot a vincular-se ao Jira e recuperar problemas específicos fornecendo a chave do problema.',
+                'Autorize o Chat AI a vincular-se ao Jira e recuperar problemas específicos fornecendo a chave do problema.',
             enabled: false,
             authRequirements: {
                 email: true,
@@ -105,7 +105,7 @@ export const initialState: PluginsState = {
             name: BuiltInPlugins.GitHub,
             publisher: 'Microsoft',
             description:
-                'Integre o Github ao Chat Copilot, ou seja, permita que o Chat CopilotBot liste solicitações pull ativas para você.',
+                'Integre o Github ao Chat AI, ou seja, permita que o Chat AI Bot liste solicitações pull ativas para você.',
             enabled: false,
             authRequirements: {
                 personalAccessToken: true,

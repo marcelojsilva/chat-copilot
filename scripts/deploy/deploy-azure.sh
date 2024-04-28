@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Deploy Chat Copilot Azure resources.
+# Deploy Chat AI Azure resources.
 
 set -e
 

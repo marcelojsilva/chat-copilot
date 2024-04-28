@@ -82,7 +82,7 @@ export const EnterManifestStep: React.FC<IEnterManifestStepProps> = ({
                 </div>
             )}
             <Body1 italic>
-                Observação: o Chat Copilot atualmente oferece suporte apenas a plug-ins que exigem{' '}
+                Observação: o Chat AI atualmente oferece suporte apenas a plug-ins que exigem{' '}
                 <a
                     href={'https://platform.openai.com/docs/plugins/authentication/no-authentication'}
                     target="_blank"

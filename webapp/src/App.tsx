@@ -94,7 +94,7 @@ const App = () => {
                     dispatch(
                         addAlert({
                             message:
-                                'Ao usar o Chat-AI, você concorda em proteger dados sensíveis, não armazená-los no chat e permitir a coleta de histórico de chat para melhorias no serviço. Esta ferramenta é destinada apenas para uso interno.',
+                                'Ao usar o Chat AI, você concorda em proteger dados sensíveis, não armazená-los no chat e permitir a coleta de histórico de chat para melhorias no serviço. Esta ferramenta é destinada apenas para uso interno.',
                             type: AlertType.Info,
                         }),
                     );

@@ -1,6 +1,6 @@
 <#
 .SYNOPSIS
-Configure user secrets, appsettings.Development.json, and webapp/.env for Chat Copilot.
+Configure user secrets, appsettings.Development.json, and webapp/.env for Chat AI.
 
 .PARAMETER AIService
 The service type used: OpenAI or AzureOpenAI.

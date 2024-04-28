@@ -156,7 +156,7 @@ export const ChatWindow: React.FC = () => {
                             aria-label="Documents Tab"
                             title="Documents Tab"
                         >
-                            Documents
+                            Documentos
                         </Tab>
                         {features[FeatureKeys.PluginsPlannersAndPersonas].enabled && (
                             <>
@@ -168,7 +168,7 @@ export const ChatWindow: React.FC = () => {
                                     aria-label="Plans Tab"
                                     title="Plans Tab"
                                 >
-                                    Plans
+                                    Planos
                                 </Tab>
                                 <Tab
                                     data-testid="personaTab"

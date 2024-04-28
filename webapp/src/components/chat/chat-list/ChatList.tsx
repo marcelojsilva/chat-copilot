@@ -168,7 +168,7 @@ export const ChatList: FC = () => {
             fileHandler.loadFile<ChatArchive>(file, chat.uploadBot).catch((error) =>
                 dispatch(
                     addAlert({
-                        message: `Failed to parse uploaded file. ${error instanceof Error ? error.message : ''}`,
+                        message: `Falha ao analisar o arquivo enviado. ${error instanceof Error ? error.message : ''}`,
                         type: AlertType.Error,
                     }),
                 ),
@@ -199,7 +199,7 @@ export const ChatList: FC = () => {
                         {isFiltering && (
                             <>
                                 <Input
-                                    placeholder="Filter by name"
+                                    placeholder="Filtrar por Nome"
                                     className={mergeClasses(classes.input, classes.title)}
                                     onChange={onSearch}
                                     autoFocus
@@ -212,10 +212,10 @@ export const ChatList: FC = () => {
             </div>
             <div aria-label={'chat list'} className={classes.list}>
                 {conversationsView.latestConversations && (
-                    <ChatListSection header="Today" conversations={conversationsView.latestConversations} />
+                    <ChatListSection header="Hoje" conversations={conversationsView.latestConversations} />
                 )}
                 {conversationsView.olderConversations && (
-                    <ChatListSection header="Older" conversations={conversationsView.olderConversations} />
+                    <ChatListSection header="Anteriores" conversations={conversationsView.olderConversations} />
                 )}
             </div>
         </div>

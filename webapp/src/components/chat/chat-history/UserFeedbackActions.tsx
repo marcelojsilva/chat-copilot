@@ -42,7 +42,7 @@ export const UserFeedbackActions: React.FC<IUserFeedbackProps> = ({ messageIndex
     return (
         <div className={classes.root}>
             <Text color="gray" size={200}>
-                AI-generated content may be incorrect
+                O conteúdo gerado por IA pode estar incorreto
             </Text>
             <Tooltip content={'Like bot message'} relationship="label">
                 <Button

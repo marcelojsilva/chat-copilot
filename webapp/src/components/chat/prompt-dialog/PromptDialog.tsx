@@ -98,9 +98,9 @@ export const PromptDialog: React.FC<IPromptDialogProps> = ({ message }) => {
             if (
                 key === 'chatMemories' &&
                 value &&
-                !(value as string).includes('User has also shared some document snippets:')
+                !(value as string).includes('O usuário também compartilhou alguns trechos de documentos:')
             ) {
-                value = (value as string) + '\nNo relevant document memories.';
+                value = (value as string) + '\nNenhuma memória de documento relevante.';
             }
 
             return value && key !== 'metaPromptTemplate' ? (
@@ -119,7 +119,7 @@ export const PromptDialog: React.FC<IPromptDialogProps> = ({ message }) => {
     return (
         <Dialog>
             <DialogTrigger disableButtonEnhancement>
-                <Tooltip content={'Show prompt'} relationship="label">
+                <Tooltip content={'Mostrar prompt'} relationship="label">
                     <Button className={classes.infoButton} icon={<Info16Regular />} appearance="transparent" />
                 </Tooltip>
             </DialogTrigger>
@@ -135,10 +135,10 @@ export const PromptDialog: React.FC<IPromptDialogProps> = ({ message }) => {
                         {message.prompt && typeof prompt !== 'string' && (
                             <TabList selectedValue={selectedTab} onTabSelect={onTabSelect}>
                                 <Tab data-testid="formatted" id="formatted" value="formatted">
-                                    Formatted
+                                    Formatado
                                 </Tab>
                                 <Tab data-testid="rawContent" id="rawContent" value="rawContent">
-                                    Raw Content
+                                    Conteúdo Raw
                                 </Tab>
                             </TabList>
                         )}
@@ -164,14 +164,14 @@ export const PromptDialog: React.FC<IPromptDialogProps> = ({ message }) => {
                     </DialogContent>
                     <DialogActions position="start" className={dialogClasses.footer}>
                         <Label size="small" color="brand">
-                            Want to learn more about prompts? Click{' '}
+                            Quer saber mais sobre prompts? Clique{' '}
                             <Link href="https://aka.ms/sk-about-prompts" target="_blank" rel="noreferrer">
-                                here
+                                aqui
                             </Link>
                             .
                         </Label>
                         <DialogTrigger disableButtonEnhancement>
-                            <Button appearance="secondary">Close</Button>
+                            <Button appearance="secondary">Fechar</Button>
                         </DialogTrigger>
                     </DialogActions>
                 </DialogBody>

@@ -124,7 +124,7 @@ export const PluginWizard: React.FC = () => {
             buttons: (
                 <>
                     <DialogTrigger>
-                        <Button appearance="secondary">Cancel</Button>
+                        <Button appearance="secondary">Cancelar</Button>
                     </DialogTrigger>
                     <Button
                         data-testid="find-manifest-button"
@@ -134,14 +134,14 @@ export const PluginWizard: React.FC = () => {
                             setActiveStep(CreatePluginSteps.ValidateManifest);
                         }}
                     >
-                        Find manifest file
+                        Encontre o arquivo de manifesto
                     </Button>
                 </>
             ),
         },
         {
             id: CreatePluginSteps.ValidateManifest,
-            header: <>Verify Plugin</>,
+            header: <>Verifique o plug-in</>,
             body: (
                 <ValidateManifestStep
                     manifestDomain={manifestDomain ?? ''}
@@ -159,7 +159,7 @@ export const PluginWizard: React.FC = () => {
                             setActiveStep(CreatePluginSteps.EnterManifest);
                         }}
                     >
-                        Back
+                        Voltar
                     </Button>
                     <Button
                         data-testid="add-plugin-button"
@@ -167,7 +167,7 @@ export const PluginWizard: React.FC = () => {
                         disabled={!pluginValidated}
                         onClick={onAddPlugin}
                     >
-                        Add Plugin
+                        Adicionar Plugin
                     </Button>
                 </>
             ),
@@ -178,14 +178,14 @@ export const PluginWizard: React.FC = () => {
                 <div className={classes.center}>
                     <CheckmarkCircle48Regular color="green" />
                     <Text size={600} align="center">
-                        Your plugin has been added successfully!
+                        Seu plugin foi adicionado com sucesso!
                     </Text>
                     <Body2 align="center">
-                        You have to enable it from the plugin gallery before it can be used in your chats.
+                        Você deve habilitá-lo na galeria de plugins antes que possa ser usado em seus bate-papos.
                     </Body2>
                     <DialogTrigger disableButtonEnhancement>
                         <Button data-testid="close-plugin-wizard" aria-label="Close Wizard" appearance="secondary">
-                            Close
+                            Fechar
                         </Button>
                     </DialogTrigger>
                 </div>
@@ -204,7 +204,7 @@ export const PluginWizard: React.FC = () => {
         >
             <DialogTrigger>
                 <Button data-testid="add-custom-plugin" aria-label="Add Custom Plugin" appearance="primary">
-                    Add
+                    Adicionar
                 </Button>
             </DialogTrigger>
             <DialogSurface className={classes.surface}>

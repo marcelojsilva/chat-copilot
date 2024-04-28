@@ -13,9 +13,9 @@ export const Login: React.FC = () => {
 
     return (
         <div className={classes.informativeView}>
-            <Title3>Login with your Microsoft Account</Title3>
+            <Title3>Faça login com sua conta da Microsoft</Title3>
             <Body1>
-                {"Don't have an account? Create one for free at"}{' '}
+                {"Não tem uma conta? Crie um gratuitamente em"}{' '}
                 <a href="https://account.microsoft.com/" target="_blank" rel="noreferrer">
                     https://account.microsoft.com/
                 </a>
@@ -26,7 +26,7 @@ export const Login: React.FC = () => {
                 appearance="transparent"
                 onClick={() => {
                     instance.loginRedirect().catch((e: unknown) => {
-                        alert(`Error signing in: ${getErrorDetails(e)}`);
+                        alert(`Erro ao fazer login: ${getErrorDetails(e)}`);
                     });
                 }}
                 data-testid="signinButton"

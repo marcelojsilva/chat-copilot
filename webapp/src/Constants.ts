@@ -1,4 +1,4 @@
-import botIcon1 from './assets/bot-icons/bot-icon-1.png';
+import botIcon1 from './assets/bot-icons/bot-icon-1b.png';
 
 export const Constants = {
     app: {
@@ -20,7 +20,7 @@ export const Constants = {
     bot: {
         profile: {
             id: 'bot',
-            fullName: 'Copilot',
+            fullName: 'AI Copilot',
             emailAddress: '',
             photo: botIcon1,
         },

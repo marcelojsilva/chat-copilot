@@ -91,9 +91,10 @@ export const ChatRoom: React.FC = () => {
                 <div className={classes.scroll}>
                     <div className={classes.history}>
                         <h3>
-                            This conversation is not visible in the app because{' '}
-                            {Features[FeatureKeys.MultiUserChat].label} is disabled. Please enable the feature in the
-                            settings to view the conversation, select a different one, or create a new conversation.
+                            Esta conversa não está visível no aplicativo porque{' '}
+                            {Features[FeatureKeys.MultiUserChat].label} está desabilitado. Ative o recurso nas
+                            configurações para ver a conversa, selecione uma conversa diferente ou crie uma nova
+                            conversa.
                         </h3>
                     </div>
                 </div>

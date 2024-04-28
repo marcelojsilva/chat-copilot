@@ -68,7 +68,7 @@ export const EditChatName: React.FC<IEditChatNameProps> = ({ name, chatId, exitE
 
     const handleSave = () => {
         onSaveTitleChange().catch((e: any) => {
-            const errorMessage = `Unable to retrieve chat to change title. Details: ${getErrorDetails(e)}`;
+            const errorMessage = `Não foi possível recuperar o chat para alterar o título. Detalhes: ${getErrorDetails(e)}`;
             dispatch(addAlert({ message: errorMessage, type: AlertType.Error }));
         });
     };
@@ -87,17 +87,17 @@ export const EditChatName: React.FC<IEditChatNameProps> = ({ name, chatId, exitE
                 flexDirection: textButtons ? 'column' : 'row',
                 gap: textButtons ? tokens.spacingVerticalS : tokens.spacingVerticalNone,
             }}
-            title={'Edit chat name'}
-            aria-label={`Edit chat name for "${name}"`}
+            title={'Editar nome do chat'}
+            aria-label={`EEditar nome do chat para "${name}"`}
         >
             <Input value={title} onChange={onTitleChange} id={`input-${chatId}`} onKeyDown={handleKeyDown} autoFocus />
             {textButtons && (
                 <div className={mergeClasses(classes.buttons, classes.textButtons)}>
                     <Button appearance="secondary" onClick={onClose}>
-                        Cancel
+                        Cancelar
                     </Button>
                     <Button type="submit" appearance="primary" onClick={handleSave}>
-                        Save
+                        Salvar
                     </Button>
                 </div>
             )}

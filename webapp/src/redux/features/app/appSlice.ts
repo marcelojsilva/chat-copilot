@@ -105,8 +105,8 @@ const getTotalTokenUsage = (previousSum?: number, current?: number) => {
 
 const isServerConnectionError = (message: string) => {
     return (
-        message.includes(`Cannot send data if the connection is not in the 'Connected' State.`) ||
-        message.includes(`Server timeout elapsed without receiving a message from the server.`)
+        message.includes(`Não é possível enviar dados se a conexão não estiver no estado 'Conectado'.`) ||
+        message.includes(`O tempo limite do servidor expirou sem receber uma mensagem do servidor.`)
     );
 };
 
@@ -122,7 +122,7 @@ const updateConnectionStatus = (state: AppState, statusUpdate: Alert) => {
     if (isServerConnectionError(statusUpdate.message)) {
         statusUpdate.message =
             // Constant message so alert UI doesn't feel glitchy on every connection error from SignalR
-            'Cannot send data due to lost connection or server timeout. Try refreshing this page to restart the connection.';
+            'Cnão enviar dados devido à perda de conexão ou tempo limite do servidor. Tente atualizar esta página para reiniciar a conexão.';
     }
 
     // There should only ever be one connection alert at a time,

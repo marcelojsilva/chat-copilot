@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!container) {
         container = document.getElementById('root');
         if (!container) {
-            throw new Error('Could not find root element');
+            throw new Error('Não foi possível encontrar o elemento raiz');
         }
         root = ReactDOM.createRoot(container);
 

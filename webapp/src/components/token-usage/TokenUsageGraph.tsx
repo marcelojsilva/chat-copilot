@@ -119,18 +119,18 @@ export const TokenUsageGraph: React.FC<ITokenUsageGraph> = ({ promptView, tokenU
     return (
         <>
             <h3 className={classes.header}>
-                Token Usage
+                Uso de Token
                 <Popover withArrow>
                     <PopoverTrigger disableButtonEnhancement>
                         <Button icon={<Info16 />} appearance="transparent" />
                     </PopoverTrigger>
                     <PopoverSurface className={classes.popover}>
                         <Body1>
-                            Token count for each category is the total sum of tokens used for the prompt template and
-                            chat completion for the respective completion functions. For more details about token usage,
-                            see{' '}
+                            A contagem de tokens para cada categoria é a soma total de tokens usados ​​para o modelo de prompt e
+                            conclusão do chat para as respectivas funções de conclusão. Para obter mais detalhes sobre o uso do token,
+                            ver{' '}
                             <a href="https://learn.microsoft.com/en-us/dotnet/api/azure.ai.openai.completionsusage?view=azure-dotnet-preview">
-                                CompletionsUsage
+                            Uso de conclusões
                             </a>{' '}
                             docs.
                         </Body1>
@@ -140,14 +140,14 @@ export const TokenUsageGraph: React.FC<ITokenUsageGraph> = ({ promptView, tokenU
             <div className={classes.content}>
                 {loadingResponse ? (
                     <Body1>
-                        Final token usage will be available once bot response is generated.
+                        O uso final do token estará disponível assim que a resposta do bot for gerada.
                         <TypingIndicator />
                     </Body1>
                 ) : (
                     <>
                         {totalUsage > 0 ? (
                             <>
-                                {!promptView && <Text>Total token usage for current session</Text>}
+                                {!promptView && <Text>Uso total de token para a sessão atual</Text>}
                                 <div className={classes.horizontal} style={{ gap: tokens.spacingHorizontalXXS }}>
                                     {Object.entries(responseGenerationView).map(([key, details]) => {
                                         return <TokenUsageBar key={key} details={details} totalUsage={totalUsage} />;
@@ -174,9 +174,9 @@ export const TokenUsageGraph: React.FC<ITokenUsageGraph> = ({ promptView, tokenU
                                 </div>
                             </>
                         ) : promptView ? (
-                            <Text>No tokens were used. This either is a hardcoded response or saved plan.</Text>
+                            <Text>Nenhum token foi usado. Esta é uma resposta codificada ou um plano salvo.</Text>
                         ) : (
-                            <Text>No tokens have been used in this session yet.</Text>
+                            <Text>Nenhum token foi usado nesta sessão ainda.</Text>
                         )}
                     </>
                 )}

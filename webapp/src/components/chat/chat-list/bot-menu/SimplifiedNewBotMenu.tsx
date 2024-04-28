@@ -46,14 +46,14 @@ export const SimplifiedNewBotMenu: FC<SimplifiedNewBotMenuProps> = () => {
         <div>
             <Menu>
                 <MenuTrigger disableButtonEnhancement>
-                    <Tooltip content="Add a chat" relationship="label">
+                    <Tooltip content="Adicionar um Chat" relationship="label">
                         <Button data-testid="createNewConversationButton" icon={<Add20 />} appearance="transparent" />
                     </Tooltip>
                 </MenuTrigger>
                 <MenuPopover>
                     <MenuList>
                         <MenuItem data-testid="addNewBotMenuItem" onClick={onAddChat}>
-                            New Chat Session
+                            Nova sessão de Chat
                         </MenuItem>
                         <Divider />
                         <MenuItem
@@ -61,7 +61,7 @@ export const SimplifiedNewBotMenu: FC<SimplifiedNewBotMenuProps> = () => {
                             disabled={!features[FeatureKeys.MultiUserChat].enabled}
                             onClick={onJoinClick}
                         >
-                            Join Shared Chat
+                            Junte-se ao Chat compartilhado
                         </MenuItem>
                     </MenuList>
                 </MenuPopover>

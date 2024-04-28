@@ -114,7 +114,7 @@ export const ChatListItem: FC<IChatListItemProps> = ({
             className={mergeClasses(classes.root, isSelected && classes.selected)}
             onClick={onClick}
             title={`Chat: ${header}`}
-            aria-label={`Chat list item: ${header}`}
+            aria-label={`Item da lista de Chat: ${header}`}
         >
             <Persona
                 avatar={{ image: { src: botProfilePicture } }}

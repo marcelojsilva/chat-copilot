@@ -499,3 +499,4 @@ tmp/*
 */Skills/NativePlugins
 */Skills/SemanticPlugins
 .mono/registry/CurrentUser/software/microsoft/csdevkit/v1/pids/59796_133587009609377790/values.xml
+.aider*
